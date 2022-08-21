@@ -1,0 +1,11 @@
+<h2>Review details</h2>
+
+{{#each reviews.user}}
+<h4>{{reviews.user}}</h4>
+<p>Comment:{{reviews.comment}}</p><hr />
+<p>Stars:{{reviews.stars}}</p><hr />
+
+<a href="/review/{{_id}}/edit">Edit</a>
+
+
+{{/each}}

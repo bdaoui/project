@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>{{appTitle}}</title>
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+   </head>
+   
+   {{#if loggedInNavigation}}
+      <nav>
+         <ul>
+            <li><a href="/auth/profile">Profile</a></li>
+              <li>
+                  <form method="post" action="/auth/logout">
+                     <button type="submit">Logout</button>
+                  </form>
+              </li>
+         </ul>
+      </nav>
+        <div>
+        <li>
+              <a href="/restaurant/create">Create a restaurant!</a>
+       </li><br>
+
+       <li>
+              <a href="/restaurant/list">List of restaurants!</a>
+       </li><br>
+
+       <li>
+              <a href="/restaurant/own-restaurants">View your restaurants!</a>
+       </li><br>
+
+       <li>
+              <a href="/review/own-reviews">View your reviews!</a>
+       </li><br>
+   
+       </div>
+      {{else}}
+      <nav>
+         <ul>
+            <li><a href="/restaurant/list">View Restaurants</a></li>
+            <li><a href="/auth/signup">Signup</a></li>
+             <li><a href="/auth/login">Login</a></li>
+         </ul>
+      </nav>
+      {{/if}}
+
+   <body>
+
+      {{{body}}}
+
+      <script src="/js/script.js"></script>
+   </body>
+
+</html>

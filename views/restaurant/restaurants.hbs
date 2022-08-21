@@ -1,0 +1,18 @@
+<h2>List of restaurants</h2>
+
+<ul>
+   {{#each restaurants}}
+  <li> 
+    <h3> <a href="/restaurant/{{this._id}}"> {{ this.name }} </a></h3> 
+    <p>- posted by {{ this.owner.name }}</p>
+    <img src="{{this.imageUrl}}" alt="" width="300">
+    {{#if this.isOwner}}
+      <form action="/restaurant/{{this._id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
+
+<a href="/">Back to homepage</a>

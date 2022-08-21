@@ -1,0 +1,6 @@
+<h2>Restaurant details</h2>
+
+{{#each restaurants.user}}
+<a href="/restaurant/{{_id}}"><h4>{{name}}</h4></a>
+<p>Cuisine:{{restaurants.cuisine}}</p><hr />
+{{/each}}
