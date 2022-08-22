@@ -1,4 +1,6 @@
-*{overflow: unset;}
+body{
+  overflow: unset;
+  height: 1500px;}
 
 a {
   color: #00b7ff;
@@ -6,4 +8,14 @@ a {
 
 h1 {
   color: 15px;
+}
+
+
+#sticky {
+  display: sticky;
+}
+
+.nav-container {
+  top: 0;
+  position: sticky;
 }
