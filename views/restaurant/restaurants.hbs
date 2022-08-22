@@ -1,7 +1,28 @@
 <h2>List of restaurants</h2>
 
 <ul>
-   {{#each restaurants}}
+  {{#each restaurants}}
+
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><a href="/restaurant/{{this._id}}"> {{ this.name }} </h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+  {{#if this.isOwner}}
+    
+    <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+        {{/if}}
+  {{/each}}
+  
+
+
+
+{{!-- </div>
   <li> 
     <h3> <a href="/restaurant/{{this._id}}"> {{ this.name }} </a></h3> 
     <p>- posted by {{ this.owner.name }}</p>
@@ -13,6 +34,9 @@
     {{/if}}
   </li>
   {{/each}}
-</ul>
+</ul> --}}
+
+
+
 
 <a href="/">Back to homepage</a>

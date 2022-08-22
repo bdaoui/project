@@ -18,4 +18,16 @@ h1 {
 .nav-container {
   top: 0;
   position: sticky;
+
+  width: 100%;
+}
+
+.navbar-nav > li{
+  padding-left:20px;
+  padding-right:20px;
+}
+
+
+.navbar-brand{
+  padding-left: 1%;
 }
