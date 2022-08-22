@@ -24,6 +24,11 @@ const projectName = "Project-practice";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
+// Add bootstrap
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+
+
+
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
 app.use("/", index);
