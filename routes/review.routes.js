@@ -4,6 +4,16 @@ const Restaurant = require('../models/Restaurant.model');
 const {isOwner, isLoggedIn, isLoggedOut} = require("../middleware/checker");
 
 
+
+router.post("/delete/:review/", isOwner, (req, res) => {
+  const { reviewId } = req.params;
+  Review.findByIdAndDelete(reviewId)
+    .then(() => res.redirect('/restaurant/list'))
+    .catch(err => console.error(err))
+});
+
+
+
 // /* CREATE NEW REVIEW  */
 
 // router.get("/create/:restaurantId", (req, res) =>{

@@ -1,24 +1,32 @@
 <h2>List of restaurants</h2>
 
-<ul>
+<div class="container">
+  <div class="row">
+
+
+  
   {{#each restaurants}}
 
+    <div class="column">
+      <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap" style="max-width:200px">
+      <div class="card-body">
+        <h5 class="card-title"><a href="/restaurant/{{this._id}}"> {{ this.name }} </h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><a href="/restaurant/{{this._id}}"> {{ this.name }} </h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-  {{#if this.isOwner}}
+    {{#if this.isOwner}}
+      
+      <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
+        <button type="submit">Delete</button>
+      </form>
     
-    <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
-      <button type="submit">Delete</button>
-    </form>
+    {{/if}}
+    </div>
+    
   </div>
-        {{/if}}
   {{/each}}
-  
+
+  </div>
+</div>
 
 
 
