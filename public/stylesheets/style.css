@@ -45,6 +45,11 @@ h1 {
 nav{
   background-color: black;
 }
+
+.btn-logout{
+  color:white;
+}
+
 /* Gallery of Images */
 
 #title-gallery{
