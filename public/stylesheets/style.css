@@ -47,3 +47,17 @@ h1 {
 
 
 /* profile */
+
+/* log in */
+
+.form-group{
+  margin: 2% 35%;
+}
+
+.form-group button{
+  margin-top: 2%;
+}
+
+.form-group label{
+  margin-top: 2%;
+}

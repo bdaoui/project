@@ -1,21 +1,35 @@
-<div id="form">
-  <h2>Signup</h2>
+  <form novalidate action="/auth/signup" method="POST">
+  
+    <div class="form-group">
+    <h2>Signup</h2>
 
-  <form action="/auth/signup" method="POST">
+    <label for="name" class="form-label"> Name</label>
+    <input id="name" type="text" name="name" class="form-control" placeholder="Jon Snow" required/>
+
+
+    <label for="email" class="form-label"> Email</label>
+    <input id="email" type="email" name="email" class="form-control" placeholder="JSnow@thewall.com" required/>
+
+    <label for="password" class="form-label"> Password</label>
+    <input id="password" type="password" name="password" class="form-control" placeholder="********" required/>
  
-    <label> Name
-      <input type="text" name="name" placeholder="Jon Snow" required/>
-    </label>
+    <button type="submit" class="btn btn-light">Create an Account</button>
  
-    <label> Email
-      <input type="email" name="email" placeholder="JSnow@thewall.com" required/>
-    </label>
- 
-    <label> Password
-      <input type="password" name="password" placeholder="********" required/>
-    </label>
- 
-    <button type="submit">Create account</button>
- 
+
+    </div>
+
   </form>
-</div>
+
+
+    <script>
+    
+    const form = document.querySelector("form");
+    form.addEventListener("submit", event =>{
+      if(!form.checkValidity()){
+        event.preventDefault()
+      }
+
+      form.classList.add("was-validated");
+
+    })
+  </script>
