@@ -1,12 +1,23 @@
 <div class="container">
   <div class="row">
-      <div class="col">
-        <h1>Welcome to the details page of the {{ restaurant.name }}</h1>
-        <p>This restaurant is posted by: <b> {{ restaurant.owner.name }} </b></p>
+      <div class="col my-4">
+        <h1>{{ restaurant.name }}</h1>
+        <p>This restaurant was posted by: <b> {{ restaurant.owner.name }} </b></p>
+        
         <hr>
-        <h3>Cuisine:</h3>
-        <p> {{ restaurant.cuisine }}</p>
+
+        <div class="row mt-5">
+          <div class="col ">
+            <h3>Cuisine:</h3>
+          </div>
+
+          <div class="col">
+            <p> {{ restaurant.cuisine }}</p>
+          </div>
+        </div>
+        
         <hr>
+        
         <h3>Gallery:</h3>
         <img src="{{restaurant.imageUrl}}" alt="" width="300">
         {{#if isOwner}}

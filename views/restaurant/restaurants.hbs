@@ -10,14 +10,6 @@
           <h3 class="card-title"> {{ this.name }}</h3> 
           <h5 class="card-subtitle">{{ this.cuisine }}</h4>
           <a href="/restaurant/{{this._id}}" class="btn mr-2"><i class="fas fa-link"></i> More Details</a>
-        
-        {{#if this.isOwner}}
-      
-        <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
-          <button type="submit">Delete</button>
-        </form>
-    
-    {{/if}}
       </div>
     </div>
 
