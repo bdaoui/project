@@ -11,6 +11,8 @@ h1 {
 }
 
 
+/* Navigation */ 
+
 #sticky {
   display: sticky;
 }
@@ -30,4 +32,16 @@ h1 {
 
 .navbar-brand{
   padding-left: 1%;
+}
+
+/* Gallery of Images */
+
+#title-gallery{
+  margin: 2% 39%;
+  font-size: 50px;
+}
+
+.col{
+  border: 2px solid red; 
+  margin:1%;
 }
