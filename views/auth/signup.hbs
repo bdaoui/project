@@ -1,3 +1,74 @@
+
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image-sign-up"></div>
+    <div class="col-md-8 col-lg-6">
+
+
+
+    <div class="login d-flex align-items-center">
+     <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">       
+              <h3 class="login-heading mb-4">Sign Up</h3>
+
+              <form novalidate action="/auth/signup" method="POST">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="name" class="form-control" id="floatingInput"  required>
+                  <label for="floatingInput">Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" name="email" class="form-control" id="floatingInput"  required>
+                  <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="d-grid">
+                  <button class="btn btn-lg btn-dark btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+
+    const form = document.querySelector("form");
+    form.addEventListener("submit", event =>{
+      if(!form.checkValidity()){
+        event.preventDefault()
+      }
+
+      form.classList.add("was-validated");
+
+    })
+  </script>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+{{!--   
+  
   <form novalidate action="/auth/signup" method="POST">
   
     <div class="form-group">
@@ -20,16 +91,4 @@
 
   </form>
 
-
-    <script>
-    
-    const form = document.querySelector("form");
-    form.addEventListener("submit", event =>{
-      if(!form.checkValidity()){
-        event.preventDefault()
-      }
-
-      form.classList.add("was-validated");
-
-    })
-  </script>
+ --}}

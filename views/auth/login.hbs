@@ -1,34 +1,42 @@
 
-<div class="login d-flex align-items-center justify-content-center">
-  <div class="row">
-    <div class="col" >
-    <img src="https://www.grunge.com/img/uploads/2016/01/gameofthronestyrellfeatured-1380x620_rev1.jpg" alt="nice aunt being served in kingslanding restaurant" class="img-fluid" style="min-height:100%;"/>
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+
+
+
+    <div class="login d-flex align-items-center">
+     <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">       
+              <h3 class="login-heading mb-4">Log In</h3>
+
+              <form novalidate action="/auth/login" method="POST">
+                <div class="form-floating mb-3">
+                  <input type="email" name="email" class="form-control" id="floatingInput"  required>
+                  <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="d-grid">
+                  <button class="btn btn-lg btn-dark btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  
-
-    <div id="loginDiv"class="col">
-
-      <form novalidate action="/auth/login" method="POST">
-  
-      <div class="form-group">
-      <h2>Login</h2>
-
-      <label for="email" class="form-label"> Email</label>
-      <input id="email" type="email" name="email" class="form-control" placeholder="JSnow@thewall.com" required/>
-
-      <label for="password" class="form-label"> Password</label>
-      <input id="password" type="password" name="password" class="form-control" placeholder="********" required/>
- 
-      <button type="submit" class="btn btn-light">Login</button>
- 
-
-    </div>
-
-  </form>
   </div>
+</div>
 
-  </div>
-</div>  
+
 
   <script>
 
