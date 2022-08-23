@@ -1,14 +1,21 @@
-<h2>Create a restaurant!</h2>
+<form novalidate action="/restaurant/create" method="POST">
 
-<form action="/restaurant/create" method="POST">
-<label for="">Name</label>
-  <input type="text" name="name" id="">
+  <div class="form-group">
+    <h2>Create a restaurant!</h2>
 
-  <label for="">Cuisine</label>
-  <input type="text" name="cuisine" id=""></input>
+    <label for="name" class="form-label"> Name</label>
+    <input id="name" type="text" name="name" class="form-control" placeholder="King's Landing Best Tavern" required/>
 
-  <label for="">Add image</label>
-  <input type="text" name="imageUrl" id="">
 
-  <button type="submit">Create restaurant</button>
+    <label for="cuisine" class="form-label"> Cuisine</label>
+    <input id="cuisine" type="text" name="cuisine" class="form-control" placeholder="Only the worst wine" required/>
+
+    <label for="image" class="form-label">Add Image</label>
+    <input id="image" type="text" name="password" class="form-control" placeholder="Link Goes Here" required/>
+
+    <button type="submit" class="btn btn-light">Create Restaurant</button>
+
+
+  </div>
+
 </form>

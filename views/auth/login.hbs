@@ -1,27 +1,37 @@
 
-
-  <form novalidate action="/auth/login" method="POST">
+<div class="login d-flex align-items-center justify-content-center">
+  <div class="row">
+    <div class="col" >
+    <img src="https://www.grunge.com/img/uploads/2016/01/gameofthronestyrellfeatured-1380x620_rev1.jpg" alt="nice aunt being served in kingslanding restaurant" class="img-fluid" style="min-height:100%;"/>
+    </div>
   
-    <div class="form-group">
-    <h2>Login</h2>
 
-    <label for="email" class="form-label"> Email</label>
-    <input id="email" type="email" name="email" class="form-control" placeholder="JSnow@thewall.com" required/>
+    <div id="loginDiv"class="col">
 
-    <label for="password" class="form-label"> Password</label>
-    <input id="password" type="password" name="password" class="form-control" placeholder="********" required/>
+      <form novalidate action="/auth/login" method="POST">
+  
+      <div class="form-group">
+      <h2>Login</h2>
+
+      <label for="email" class="form-label"> Email</label>
+      <input id="email" type="email" name="email" class="form-control" placeholder="JSnow@thewall.com" required/>
+
+      <label for="password" class="form-label"> Password</label>
+      <input id="password" type="password" name="password" class="form-control" placeholder="********" required/>
  
-    <button type="submit" class="btn btn-light">Login</button>
+      <button type="submit" class="btn btn-light">Login</button>
  
 
     </div>
 
   </form>
+  </div>
 
-
+  </div>
+</div>  
 
   <script>
-    
+
     const form = document.querySelector("form");
     form.addEventListener("submit", event =>{
       if(!form.checkValidity()){
