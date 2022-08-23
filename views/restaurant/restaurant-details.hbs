@@ -70,14 +70,16 @@
       
       </div>
   </div>
-  <hr>
+  
    <div class="row">
       <div class="col">
+
         {{/if}}
+        <hr>
 
         {{!-- if there are reviews, show them, if not, forget about it 🙃 --}}
         {{#if restaurant.reviews}}
-        <h3>Reviews:</h3>
+        <h3>Reviews</h3>
         {{#each restaurant.reviews}}
         <p> <b>{{ this.user.name }} said: </b> {{ this.comment }}  </p>
         {{#if canBeChanged}}
@@ -93,18 +95,19 @@
       </div>
     </div>
 
-     <div class="row">
-      <div class="col">
         {{!-- USER CAN NOT LEAVE REVIEWS ON THEIR OWN PROPERTIES --}}
         {{!-- this means that only if the user IS NOT the owner, this form will be shown --}}
 
-      {{#if isNotOwner}}
-      <h2>Add a review:</h2>
-      <form action="/review/create/{{restaurant._id}}" method="POST">
-      <textarea name="comment" id="" cols="10" rows="5"></textarea>
-      <button type="submit">Add</button>
-  </form>
-{{/if}}
-      </div>
-    </div>
+<div class="row">
+  <div class="col-10">
+    {{#if isNotOwner}}
+    <h2>Add a review</h2>
+    <form action="/review/create/{{restaurant._id}}" method="POST">
+      <textarea name="comment" id="" class="form-control h-25 mb-5 " ></textarea>
+  </div>
+  <div class="col d-flex align-items-center ">
+      <button class="btn btn-lg btn-dark text-uppercase" type="submit">Add</button>
+    </form>
+  </div>
+    {{/if}}
 </div>
