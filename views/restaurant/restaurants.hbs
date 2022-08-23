@@ -1,14 +1,17 @@
-<h2 id="title-gallery">List of restaurants</h2>
 
 <div class="container">
+  <div class="row text-center">
+  <h2 id="title-gallery">List of restaurants</h2>
+  </div>
+
   <div class="row">
     {{#each restaurants}}
 
-      <div class="col">
-        <div class="card" style="width: 18rem;">
+      <div class="col ">
+        <div class="card " style="width: 30rem">
           <img src="{{this.imageUrl}}" alt="" class="card-img-top">
           <h3 class="card-title"> {{ this.name }}</h3> 
-          <h5 class="card-subtitle">{{ this.cuisine }}</h4>
+          <h5 class="car  d-subtitle">{{ this.cuisine }}</h4>
           <a href="/restaurant/{{this._id}}" class="btn mr-2"><i class="fas fa-link"></i> More Details</a>
       </div>
     </div>

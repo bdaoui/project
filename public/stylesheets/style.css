@@ -52,9 +52,10 @@ nav{
 
 /* Gallery of Images */
 
+
+
 #title-gallery{
-  margin: 2% 39%;
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .col{ 
@@ -62,7 +63,7 @@ nav{
 }
 
 .card >img{
-  height: 15rem;
+  height: 20rem;
 }
 
 .card >h3{
