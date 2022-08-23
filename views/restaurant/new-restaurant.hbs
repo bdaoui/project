@@ -1,30 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-
-  </div>
-</div>
-
-<form novalidate action="/restaurant/create" method="POST">
-
-  <div class="form-group">
+<div class="container mt-4">
+  <form novalidate action="/restaurant/create" method="POST">
     <h2>Create a restaurant!</h2>
 
-    <label for="name" class="form-label"> Name</label>
-    <input id="name" type="text" name="name" class="form-control" placeholder="King's Landing Best Tavern" required/>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="form-label"> Name</label>
+        <input id="name" type="text" name="name" class="form-control" placeholder="King's Landing Best Tavern" required/>
+      </div>
+    </div>
 
-
-    <label for="cuisine" class="form-label"> Cuisine</label>
+    <div class="row">
+      <div class="col">
+        <label for="cuisine" class="form-label"> Cuisine</label>
     <input id="cuisine" type="text" name="cuisine" class="form-control" placeholder="Only the worst wine" required/>
+      </div>
+    </div>
 
-    <label for="image" class="form-label">Add Image</label>
+    <div class="row">
+      <div class="col">
+       <label for="image" class="form-label">Add Image</label>
     <input id="image" type="text" name="password" class="form-control" placeholder="Link Goes Here" required/>
-
-    <button type="submit" class="btn btn-light">Create Restaurant</button>
-
-
-  </div>
-
-</form>
+      </div>
+    </div>
+  
+  </form>
+</div>
