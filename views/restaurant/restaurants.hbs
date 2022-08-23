@@ -3,11 +3,14 @@
 <div class="container">
   <div class="row">
     {{#each restaurants}}
-      <div class="col">
 
-        <h3> <a href="/restaurant/{{this._id}}"> {{ this.name }} </a></h3> 
-        <p>- posted by {{ this.owner.name }}</p>
-        <img src="{{this.imageUrl}}" alt="" width="300">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+        <img src="{{this.imageUrl}}" alt="" class="card-img-top">
+        <h3 class="card-title"> {{ this.name }}</h3> 
+        <h5 class="card-subtitle">- posted by {{ this.owner.name }}</h4>
+        <a href="/restaurant/{{this._id}}" class="btn mr-2"><i class="fas fa-link"></i> Visit Site</a>
+        
         {{#if this.isOwner}}
       
         <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
@@ -16,53 +19,12 @@
     
     {{/if}}
       </div>
+    </div>
 
     {{/each}}
 
     </div>
     
-
-
-      
-{{!--   
-  {{#each restaurants}}
-    <div class="col" style="border: 2px solid red"></div>  
-      <img class="card-img-top" src="{{this.imageUrl}}" alt="Card image cap" style="max-width:200px">
-      <div class="card-body">
-        <h5 class="card-title"><a href="/restaurant/{{this._id}}"> {{ this.name }} </h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-    {{#if this.isOwner}}
-      
-      <form action="/restaurant/{{this._id}}/delete" method="POST" class="btn btn-primary">
-        <button type="submit">Delete</button>
-      </form>
-    
-    {{/if}}
-    </div>
-    
-    </div>
-
-  </div>
-  {{/each}}
-  </div>
-</div> --}}
-
-
-
-{{!-- </div>
-  <li> 
-    <h3> <a href="/restaurant/{{this._id}}"> {{ this.name }} </a></h3> 
-    <p>- posted by {{ this.owner.name }}</p>
-    <img src="{{this.imageUrl}}" alt="" width="300">
-    {{#if this.isOwner}}
-      <form action="/restaurant/{{this._id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-    {{/if}}
-  </li>
-  {{/each}}
-</ul> --}}
 
 
 
