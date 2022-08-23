@@ -18,38 +18,59 @@
         
         <hr>
         
-        <h3>Gallery:</h3>
-        <img src="{{restaurant.imageUrl}}" alt="" width="300">
+        <div class="row my-5">
+          <div class="col d-flex flex-column align-items-center justify-content-center">
+            <h3>Gallery</h3>
+            <img src="{{restaurant.imageUrl}}" alt="" width="300">
+          </div>
 
         {{#if isOwner}}
-        <hr>
       </div>
+      <hr>
+
   </div>
 
  <div class="row">
       <div class="col">
         <form action="/restaurant/edit/{{restaurant._id}}/" method="post" id="edit-form" > 
-          <label for="">Name</label>
-          <input type="text" name="name" id="" value="{{restaurant.name}}">
+         
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col col-md-4 d-flex flex-column">
+            <label for="">Name</label>
+            <input type="text" name="name" id="" value="{{restaurant.name}}">
 
-          <label for="">Cuisine</label>
-          <input type="text" name="cuisine" id="" value="{{restaurant.cuisine}}">
+            <label for="">Cuisine</label>
+            <input type="text" name="cuisine" id="" value="{{restaurant.cuisine}}">
+          </div>
 
+          <div class="col d-flex">
           <img src="{{restaurant.imageUrl}}" alt="" width="200">
-          <label for="">Upload new image</label>
-          <input type="text" name="imageUrl" id="" value="{{restaurant.imageUrl}}"> 
 
+            <div class="col d-flex flex-column m-3 m-md-5" >
+              <label for="">Upload new image</label>
+              <input type="text" name="imageUrl" id="" value="{{restaurant.imageUrl}}"> 
+            </div>
+
+          </div>
+        </div>
+        <br/>
+          
+      
+      <div class="row">
+        
+        <div class="col d-flex justify-content-between">
           <button type="submit">Save changes</button>
         </form>
-        <br/>
-
-        <form action="/restaurant/delete/{{restaurant._id}}" method="post">
-          <button type="submit">Delete this restaurant</button>
-        </form>
-      <hr>
+        
+          <form action="/restaurant/delete/{{restaurant._id}}" method="post">
+            <button type="submit">Delete this restaurant</button>
+          </form>
+        </div>
+      </div>
+      
       </div>
   </div>
-
+  <hr>
    <div class="row">
       <div class="col">
         {{/if}}
