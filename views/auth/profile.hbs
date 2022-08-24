@@ -71,19 +71,19 @@
 		</div>
 		</div>
 
-	</div>
-	</div>
 
 	<! Recipes Api>
-        <div class="container">
-                <div class="row text-center">
-                <h3>Feeling hungry?</h3>
-                <h5>Get a random meal by clicking below</h5>
-                <button class="button-primary" id="get_meal">Get Meal 🍔</button>
+	<div class="row mt-4 ">
+		<div class="col d-flex flex-column">
+                <div class="text-center ">
+									<h3>Feeling hungry?</h3>
+									<h5>Get a random meal by clicking below</h5>
+									<button class="btn btn-block btn-dark my-4" id="get_meal">Get Meal 🍔</button>
                 </div>
-                <div id="meal" class="row meal m-4"></div>
+                
+								<div id="meal" class="d-flex flex-column justify-content-center align-items-center"></div>
         </div>
-		</div>
+	</div>
 
 </div>
 
@@ -181,22 +181,34 @@ const createMeal = (meal) => {
 	}
 	
 const newInnerHTML = `
-<div class="row d-flex flex-colum justify-content-center">
-	<div class="columns five">
-		<img src="${meal.strMealThumb}" alt="Meal Image">
-		${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
-		${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ''}
-		${meal.strTags ? `<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
-		<h5>Ingredients:</h5>
-		<ul>
-		${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-		</ul>
+<div class="row d-flex flex-column justify-content-center p-0">
+		<div class="col text-center p-3">
+				<h4>${meal.strMeal}</h4>
+
 	</div>
-	<div class="columns seven">
-		<h4>${meal.strMeal}</h4>
+
+	 
+	<div class="col d-flex justify-content align-items-center">
+		<img src="${meal.strMealThumb}" alt="Meal Image" class="img-thumbnail">
+		
+		<div> 
+			${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
+			${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ''}
+			${meal.strTags ? `<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
+			<h5>Ingredients:</h5>
+			<ul>
+			${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+			</ul>
+		</div>
+	</div>
+	
+	<div class="col m-4">
 		<p>${meal.strInstructions}</p>
+
 	</div>
+
 </div>
+
 	${meal.strYoutube ? `
 	<div class="row">
 	<h5>Video Recipe</h5>

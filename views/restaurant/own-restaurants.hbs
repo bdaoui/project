@@ -1,6 +1,8 @@
 <h2>Restaurant details</h2>
 
-{{#each restaurants.user}}
-<a href="/restaurant/{{_id}}"><h4>{{name}}</h4></a>
-<p>Cuisine:{{restaurants.cuisine}}</p><hr />
+{{#each ownRestaurants}}
+<a href="/restaurant/{{this._id}}"><h4>{{this.name}}</h4></a>
+<p>Cuisine:{{this.cuisine}}</p><hr />
+ <img src="{{this.imageUrl}}" alt="" width="300">
+
 {{/each}}

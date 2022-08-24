@@ -21,7 +21,7 @@
         <div class="row my-5">
           <div class="col d-flex flex-column align-items-center justify-content-center">
             <h3>Gallery</h3>
-            <img src="{{restaurant.imageUrl}}" alt="" width="300">
+            <img src="{{restaurant.imageUrl}}" alt="" width="300" class="my-5">
           </div>
 
         {{#if isOwner}}
@@ -71,7 +71,7 @@
       </div>
   
   
-   <div class="row">
+   <div class="row mt-4">
       <div class="col">
 
         {{/if}}
@@ -97,19 +97,19 @@
 
         {{!-- USER CAN NOT LEAVE REVIEWS ON THEIR OWN PROPERTIES --}}
         {{!-- this means that only if the user IS NOT the owner, this form will be shown --}}
-        
+ {{#if isNotOwner}}
+
 <div class="container">
 
   <div class="row">
     <div class="col-12 text-center">
-      <h2 data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">Add a review</h2>
+      <h2 data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse" >Add a review</h2>
     </div>
   </div>
 
   <div class="row collapse" id="collapse">
 
     <div class="col-12 col-md-10">
-      {{#if isNotOwner}}
       <form action="/review/create/{{restaurant._id}}" method="POST">
         <textarea name="comment" id="" class="form-control h-25 mb-3 " ></textarea>
     </div>
@@ -138,7 +138,7 @@
       </form>
       {{/if}}
       
-      </div>
+  </div>
 
 </div>
 

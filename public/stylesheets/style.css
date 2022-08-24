@@ -77,6 +77,11 @@ nav{
 
 /* profile */
 
+.img-thumbnail{
+  width: 30vw;
+  margin: 5%;
+}
+
 /*log in / sign up*/
 
 .login {
