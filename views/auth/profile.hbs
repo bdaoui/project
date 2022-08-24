@@ -54,14 +54,23 @@
         </div>
 			</div>
 
-
-		<div class="col-12 col-md-1 d-flex align-items-center justify-content-center">
-					<div id="content">
+		
+		<div class="col col-md-1 d-flex align-items-center justify-content-center">
+					<div>
 						<div class="container text-center mt-2">
 						<button class="btn btn-dark" id="submit">Submit</button>
 						</div>
 					</div>
 		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-12 d-flex align-items-center justify-content-center mb-5" id="content">
+			{{!-- API RESULT --}}
+		</div>
+		</div>
+
+	</div>
 	</div>
 
 	<! Recipes Api>
@@ -71,7 +80,7 @@
                 <h5>Get a random meal by clicking below</h5>
                 <button class="button-primary" id="get_meal">Get Meal 🍔</button>
                 </div>
-                <div id="meal" class="row meal"></div>
+                <div id="meal" class="row meal m-4"></div>
         </div>
 		</div>
 
@@ -96,7 +105,7 @@
         }
         populateUI(data) {
         this.uiContainer.innerHTML = `
-                <div class="card mx-auto mt-5" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 49vw;">
                 <div class="card-body justify-content-center">
                 <h5 class="card-title">${data.name}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Highs of ${data.main.temp_max}°C. Lows of ${data.main.temp_min}°C</h6>
@@ -171,7 +180,7 @@ const createMeal = (meal) => {
 	}
 	
 const newInnerHTML = `
-<div class="row">
+<div class="row d-flex flex-colum justify-content-center">
 	<div class="columns five">
 		<img src="${meal.strMealThumb}" alt="Meal Image">
 		${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
