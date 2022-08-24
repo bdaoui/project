@@ -5,7 +5,7 @@ const restaurantSchema = new Schema(
     owner: { type: Schema.Types.ObjectId, ref: "User"},
     name: { type: String, required: [true, "Must include name"]},
     cuisine: { type: String, required: [true, "Please select a cuisine"]},
-    imageUrl: { type: String, required: [true, "Please add an image"]},
+    imageUrl: { type: String},
     reviews: [{ type: Schema.Types.ObjectId, ref: "Review"}],
     },
     {

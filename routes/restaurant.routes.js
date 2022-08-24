@@ -3,6 +3,7 @@ const router = express.Router();
 const { isLoggedIn, isOwner, canBeChanged } = require('../middleware/checker');
 const Restaurant = require('../models/Restaurant.model');
 const Review = require('../models/Review.model');
+const uploadCloud = require("../config/cloudinary.config");
 
 //get all restaurants
 router.get("/list", (req, res) => {
@@ -36,10 +37,13 @@ router.get("/create", isLoggedIn, (req, res) => {
   res.render('restaurant/new-restaurant', {loggedInNavigation})
 });
 
-router.post("/create", isLoggedIn, (req, res) => {
-  const { name, cuisine, imageUrl } = req.body;
+router.post("/create", isLoggedIn, uploadCloud.single(`imageUrl`), (req, res) => {
+  const { name, cuisine } = req.body;
+  const {path} = req.file;
   const { _id } = req.session.currentUser;
-  Restaurant.create({ name, cuisine, imageUrl, owner:_id })
+
+
+  Restaurant.create({ name, cuisine, imageUrl: path, owner:_id })
     .then(newRestaurant =>{
           res.redirect('/restaurant/list')
     })

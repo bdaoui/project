@@ -1,6 +1,6 @@
 <div class="container mt-5">
 
-  <form novalidate action="/restaurant/create" method="POST">
+  <form novalidate action="/restaurant/create" method="POST" enctype="multipart/form-data">
     <div>
 
       <h2>Create a restaurant!</h2>
@@ -19,12 +19,18 @@
         </div>
       </div>
 
-      <div class="row">
+      {{!-- <div class="row">
         <div class="col">
         <label for="image" class="form-label pt-2">Add Image</label>
       <input id="image" type="text" name="imageUrl" class="form-control" placeholder="Link Goes Here" required/>
         </div>
+      </div> --}}
+
+      <div class="col">
+        <label for="image" class="form-label pt-2">Upload Image</label>
+        <input id="image" type="file" name="imageUrl" class="form-control-file" />
       </div>
+
       <div class="row ">
         <div class="col mt-2">
           <button class="btn btn-sm btn-dark  text-uppercase fw-bold mb-2" type="submit">Create New Restaurant</button>
