@@ -69,7 +69,7 @@
       </div>
       
       </div>
-  </div>
+  
   
    <div class="row">
       <div class="col">
@@ -97,17 +97,49 @@
 
         {{!-- USER CAN NOT LEAVE REVIEWS ON THEIR OWN PROPERTIES --}}
         {{!-- this means that only if the user IS NOT the owner, this form will be shown --}}
+        
+<div class="container">
 
-<div class="row">
-  <div class="col-10">
-    {{#if isNotOwner}}
-    <h2>Add a review</h2>
-    <form action="/review/create/{{restaurant._id}}" method="POST">
-      <textarea name="comment" id="" class="form-control h-25 mb-5 " ></textarea>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2 data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">Add a review</h2>
+    </div>
   </div>
-  <div class="col d-flex align-items-center ">
-      <button class="btn btn-lg btn-dark text-uppercase" type="submit">Add</button>
-    </form>
-  </div>
-    {{/if}}
+
+  <div class="row collapse" id="collapse">
+
+    <div class="col-12 col-md-10">
+      {{#if isNotOwner}}
+      <form action="/review/create/{{restaurant._id}}" method="POST">
+        <textarea name="comment" id="" class="form-control h-25 mb-3 " ></textarea>
+    </div>
+
+
+
+    <div class="col-12 col-md d-flex align-items-center justify-content-center ">
+
+      <select name="stars" id="stars" required>
+        <option value="" selected disabled hidden>Stars</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>  
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+    </div>
+
+    <div class="row">
+      <div class="col col-md-12 d-flex justify-content-center justify-content-md-start p-0">
+        <button class="btn  btn-block btn-dark text-uppercase" type="submit">Add</button>
+      </div>
+    </div>
+      
+      </form>
+      {{/if}}
+      
+      </div>
+
+</div>
+
 </div>

@@ -56,15 +56,15 @@ nav{
 
 #title-gallery{
   font-size: 3rem;
+  padding-top: 5%;
 }
 
-.col{ 
-  margin:1%;
+
+.card > img{
+  width: 100%;
+  height: 25%;
 }
 
-.card >img{
-  height: 20rem;
-}
 
 .card >h3{
   font-size: 1.5rem;
@@ -102,4 +102,12 @@ nav{
   background-image: url('https://i2-prod.glasgowlive.co.uk/incoming/article16469293.ece/ALTERNATES/s615/0_fans-spotted-a-coffee-cup-sitting-on-a-table-during-a-new-game-of-thrones-feast-scene__26215_.png');
   background-size: cover;
   background-position: center;
+}
+
+/* Details */
+
+#stars{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
 }
