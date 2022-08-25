@@ -91,9 +91,10 @@ router.get("/edit/:restaurantId", isLoggedIn, (req, res) => {
   res.render('restaurant/edit-restaurant', {loggedInNavigation})
 });
 
-router.post("/edit/:restaurantId", isOwner, (req, res) => {
+router.post("/edit/:restaurantId", uploadCloud.single(`imageUrl`), isOwner, (req, res) => {
   const { restaurantId } = req.params;
   const restaurantUpdate = req.body;
+  const {path} = req.file;
 
   if(restaurantUpdate.imageUrl === ''){
     Restaurant.findById(restaurantId)
@@ -103,7 +104,7 @@ router.post("/edit/:restaurantId", isOwner, (req, res) => {
       .then(() => res.redirect('/restaurant/list'))
   } else 
   {
-    Restaurant.findByIdAndUpdate(restaurantId, restaurantUpdate, {new: true})
+    Restaurant.findByIdAndUpdate(restaurantId, {name: restaurantUpdate.name, cuisine: restaurantUpdate.cuisine, imageUrl: path}, {new: true})
       .then(() => {
         res.redirect('/restaurant/list');
       })
